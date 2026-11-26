@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(median_engine LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_library(median_engine median_engine.cpp)
+add_executable(median_test tests/median_test.cpp)
+target_link_libraries(median_test PRIVATE median_engine)
+enable_testing()
+add_test(NAME median_engine_tests COMMAND median_test)
